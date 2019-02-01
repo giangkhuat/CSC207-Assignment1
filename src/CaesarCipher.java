@@ -2,8 +2,20 @@ import java.io.PrintWriter;
 
 public class CaesarCipher {
   public static void main(String[] args) throws Exception {
+  
+    if (args.length != 2)
+    {
+      System.err.println("Incorrect number of parameters. ");
+      System.exit(2);
+    }
     String action = args[0];
     String input = args[1];
+    if (action.equals("encode") == false || action.equals("encode") == false)
+    {
+      System.err.println("Invalid command. Please enter \"encode\" or \"decode\".");
+      System.exit(1);
+    }
+    
     char[] str = input.toCharArray();
     if (action.equals("encode")) {
       encode(str);
@@ -11,9 +23,8 @@ public class CaesarCipher {
     if (action.equals("decode")) {
       decode(str);
     }
-
   }
-
+  
   /*
    * Procedure: encode Parameters: str, a character array Produces: void Purpose: Create all 26
    * permutations of Preconditions: str should not be empty
